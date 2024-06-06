@@ -1,6 +1,7 @@
       <!DOCTYPE html>
 
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,18 +10,93 @@
 
     <title>Bingo</title>
 </head>
+
 <body>
     <header>
-        <h1>Tabela</h1>
+        <h1>Bingo</h1>
     </header>
-    
-    <button type = "button" onclick = "criarTabela()">Criar Bingo</button><br>
 
-    <table>
-        <thead>
-            <!-- Tabela para o Bingo -->
-        </thead>
-    </table>
+    <main>
+
+    <section id="cartelas">
+
+        <div id="header_cartelas">
+            <h3>Cartelas</h3>
+            <button type = "button" onclick = "criarTabela()">Criar Bingo</button>
+            <button>Reiniciar</button>
+        </div>
+
+        <div id="bingo">
+
+            <div class="cartela_bingo">
+                <h4>Nome do Jogador</h4>
+                <table>
+                    <thead>                    
+                        <th>B</th>
+                        <th>I</th>
+                        <th>N</th>
+                        <th>G</th>
+                        <th>O</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                        </tr>
+                        <tr>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                        </tr>                        <tr>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                        </tr>                        <tr>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                        </tr>                        <tr>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>X</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="numeros">
+
+        <div id="header_numeros">
+            <h3>Sorteador de Números</h3>
+            <button>Jogar</button>
+        </div>
+
+        <div id="body_numeros">
+
+        </div>
+
+    </section>
+
+
+    </main>
+
+    <footer>
+        <h4>Developed by @daphrz_</h4>
+    </footer>
 
     <script src="index.js"></script>
 
