@@ -1,61 +1,73 @@
 function criarTabela(){
 
-    //Criando elementos principais
-    const tabela = document.createElement("table");
-    const thead = document.createElement("thead");
-    const tbody = document.createElement("tbody");
+// Criando a div //
 
-    //Criando a tabela
-    tabela.appendChild(thead);
-    tabela.appendChild(tbody);
-    
-    const body = document.querySelector("body");
-    body.appendChild(tabela);
-    
-    const th_B = document.createElement("th");
-    th_B.innerHTML = "B";
-    const th_I = document.createElement("th");
-    th_I.innerHTML = "I";
-    const th_N = document.createElement("th");
-    th_N.innerHTML = "N";
-    const th_G = document.createElement("th");
-    th_G.innerHTML = "G";
-    const th_O = document.createElement("th");
-    th_O.innerHTML = "O";
+        // Seleciono onde eu quero criar o elemento
+        const pai_div_cartela = document.getElementById ('bingo');
 
-    //Criando cabeçalho
-    const tr_head = document.createElement("tr");
-    tr_head.appendChild(th_B);
-    tr_head.appendChild(th_I);
-    tr_head.appendChild(th_N);
-    tr_head.appendChild(th_G);
-    tr_head.appendChild(th_O);
+        // Crio uma div para minha cartela
+        const div_bingo = document.createElement ('div');
+        div_bingo.className = 'cartela_bingo';
 
-    // Adicionando a linha do cabeçalho ao cabeçalho
-    thead.appendChild(tr_head);
+        // Insiro a div dentro do pai
+        pai_div_cartela.appendChild(div_bingo);
 
-    var nome = prompt("Digite seu nome:");
+// Criando nome do jogador //
 
-    // Criando a célula de nome
-    const td_nome = document.createElement("td");
-    td_nome.innerHTML = nome;
+        // Criar um elemento de texto para o nome do jogador
+        const h4_jogador = document.createElement ('h4');
+        var nome = prompt("Digite seu nome:");
+        h4_jogador.innerText = nome;
 
-    // Criando a linha do cabeçalho com o nome do usuário
-    //Vinculando os elementos
-    const tr_nome = document.createElement("tr");
-    tr_nome.appendChild(td_nome);
+        // Inserir o nome do jogador na div
+        div_bingo.appendChild(h4_jogador);
 
-    // Adicionando a linha com o nome ao cabeçalho
-    thead.appendChild(tr_nome);
+// Criando a tabela do Bingo //
 
-    //Inserindo os elementos no tbody
-    for(let i = 0; i < 5; i++){
-        const tr = document.createElement("tr");
+        // Criando elementos principais
+        const tabela = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
 
-        for(let j = 0; j < 5; j++){
-            const td = document.createElement("td");
-            td.innerHTML = "X";
-            tr.appendChild(td);
+        // Criando elementos do thead
+        const th_B = document.createElement('th');
+        const th_I = document.createElement('th');
+        const th_N = document.createElement('th');
+        const th_G = document.createElement('th');
+        const th_O = document.createElement('th');
+
+        th_B.innerHTML = 'B';
+        th_I.innerHTML = 'I';
+        th_N.innerHTML = 'N';
+        th_G.innerHTML = 'G';
+        th_O.innerHTML = 'O';
+
+        // Criando cabeçalho //Inserindo th no thead
+        const tr_head = document.createElement('tr');
+        thead.appendChild(th_B);
+        thead.appendChild(th_I);
+        thead.appendChild(th_N);
+        thead.appendChild(th_G);
+        thead.appendChild(th_O);
+
+        // Adicionando a linha do cabeçalho ao thead
+        thead.appendChild(tr_head);
+
+        // Criando // Inserindo na tabela
+        tabela.appendChild(thead);
+        tabela.appendChild(tbody);
+
+        // Insere a tabela na div_bingo
+        pai_div_cartela.appendChild(tabela);
+
+        //Inserindo os elementos no tbody
+        for(var i = 0; i < 5; i++){
+            const tr = document.createElement('tr');
+
+            for(var j = 0; j < 5; j++){
+                const td = document.createElement('td');
+                td.innerHTML = "X";
+                tr.appendChild(td);
         }
         tbody.appendChild(tr);
     }
