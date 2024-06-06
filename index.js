@@ -72,3 +72,20 @@ function criarTabela(){
         tbody.appendChild(tr);
     }
 }
+
+function gerarColuna(quant, inicio, fim){
+    var coluna = [];
+
+    while(coluna.lenght < quant){
+        var aleatorio = Math.floor(Math.random()*(fim - inicio) + inicio);
+        if(!coluna.includes(aleatorio)){
+            coluna.push(aleatorio);
+        }
+    }
+}
+
+function gerarNumeros() {
+    var numeros = [gerarColuna(5,1,15),gerarColuna(5,16,30),gerarColuna(5,31,45),gerarColuna(5,46,60),gerarColuna(5,61,75)];
+
+    return numeros;
+}
